@@ -15,58 +15,61 @@ def convert_units(value, from_unit, to_unit):
         return None
 
 # Streamlit App
-st.set_page_config(page_title="🌍 Ultimate Unit Converter", layout="centered")
+st.set_page_config(page_title="✨ Ultimate Unit Converter", layout="centered")
 
 # Custom CSS for styling and animations
 st.markdown("""
     <style>
     /* General Styling */
     body {
-        font-family: 'Arial', sans-serif;
+        font-family: 'Helvetica', sans-serif;
+        background: #f5f5f5;
     }
     .stButton>button {
-        background-color: #4CAF50;
+        background-color: #28a745;
         color: white;
-        font-size: 16px;
-        padding: 10px 24px;
-        border-radius: 8px;
+        font-size: 18px;
+        padding: 12px 28px;
+        border-radius: 12px;
         border: none;
-        transition: background-color 0.3s ease, transform 0.2s ease;
+        transition: background-color 0.3s ease, transform 0.3s ease;
     }
     .stButton>button:hover {
-        background-color: #45a049;
-        transform: scale(1.05);
+        background-color: #218838;
+        transform: scale(1.1);
     }
     .stTextInput>div>div>input, .stSelectbox>div>div>div {
-        border: 2px solid #4CAF50;
-        border-radius: 8px;
-        padding: 10px;
+        border: 2px solid #28a745;
+        border-radius: 12px;
+        padding: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         transition: border-color 0.3s ease;
     }
     .stTextInput>div>div>input:focus, .stSelectbox>div>div>div:focus {
-        border-color: #45a049;
+        border-color: #218838;
     }
     .stMarkdown h1 {
-        color: #4CAF50;
+        color: #28a745;
         text-align: center;
         animation: fadeIn 2s;
     }
     .stMarkdown h2, .stMarkdown h3 {
-        color: #4CAF50;
+        color: #28a745;
     }
     .stSuccess {
         background-color: #d4edda;
         color: #155724;
-        padding: 10px;
-        border-radius: 8px;
+        padding: 12px;
+        border-radius: 12px;
         border: 1px solid #c3e6cb;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         animation: slideIn 0.5s ease;
     }
     .stError {
         background-color: #f8d7da;
         color: #721c24;
-        padding: 10px;
-        border-radius: 8px;
+        padding: 12px;
+        border-radius: 12px;
         border: 1px solid #f5c6cb;
         animation: shake 0.5s;
     }
@@ -86,13 +89,34 @@ st.markdown("""
         75% { transform: translateX(-10px); }
         100% { transform: translateX(0); }
     }
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #28a745;
+        color: white;
+        text-align: center;
+        padding: 12px;
+        font-size: 18px;
+        font-family: 'Helvetica', sans-serif;
+        animation: fadeIn 2s;
+    }
+    .footer a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    .footer a:hover {
+        color: #f5f5f5;
+    }
     </style>
     """, unsafe_allow_html=True)
 
 # Title and description
-st.title("🌍 Ultimate Unit Converter")
+st.title("✨ Ultimate Unit Converter")
 st.markdown("""
-Convert any unit to another in real-time! Supports length, mass, temperature, volume, speed, and more.
+Convert any unit to another in real-time! Supports various unit categories like length, mass, temperature, volume, speed, energy, and more. Experience fast and accurate conversions with a clean interface.
 """)
 
 # Define supported units
@@ -166,34 +190,7 @@ with st.expander("📚 Supported Units and Examples"):
     5. Click **Convert** to see the result.
     """)
 st.markdown("""
-    <style>
-    .footer {
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        background-color: #4CAF50;
-        color: white;
-        text-align: center;
-        padding: 10px;
-        font-size: 16px;
-        font-family: 'Arial', sans-serif;
-        animation: fadeIn 2s;
-    }
-    .footer a {
-        color: white;
-        text-decoration: none;
-        font-weight: bold;
-    }
-    .footer a:hover {
-        color: #d4edda;
-    }
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-    }
-    </style>
     <div class="footer">
-        Developed with ❤️ by <a href="https://www.linkedin.com/in/hamza-rafiq-5120752b8/" target="_blank">Hamza Rafique</a>
+        Developed with ❤️ by <a href="https://linkedin.com/in/umama-rajput-79603b301" target="_blank">Umama Rajput</a>
     </div>
     """, unsafe_allow_html=True)
